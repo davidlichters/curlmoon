@@ -12,8 +12,8 @@ SEITEN = {
 }
 # Abschnitte je Seite, in dieser Reihenfolge aus bau/teil_<name>.html (Begründung je Abschnitt: ANALYSE.md)
 ABSCHNITTE = {
-    'index.html': ['vorteile', 'vergleich', 'bewertungen_kurz', 'garantie', 'fragen', 'schluss_home'],
-    'products/porchnap-nap-nest/index.html': ['fuer', 'vorteile', 'vergleich', 'angebot', 'groessen', 'garantie', 'bewertungen', 'fragen', 'schluss'],
+    'index.html': ['vergleich', 'band', 'bewertungen_kurz', 'garantie', 'fragen', 'schluss_home'],
+    'products/porchnap-nap-nest/index.html': ['bew_pdp', 'vergleich', 'band', 'garantie', 'groessen', 'fragen', 'schluss'],
 }
 
 for ziel, b in SEITEN.items():
