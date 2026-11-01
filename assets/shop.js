@@ -53,6 +53,19 @@
     }, { passive: true })
     daumen.forEach((d, i) => d.addEventListener('click', () => { spur.scrollTo({ left: i * spur.clientWidth, behavior: 'smooth' }); markiere(i) }))
     markiere(0)
+    // Antippen öffnet das Bild im Vollbild (Fell aus der Nähe, mit zwei Fingern zoomen)
+    const voll = $('#vollbild')
+    if (voll) {
+      const vspur = $('.vollbild__spur', voll)
+      vspur.innerHTML = bilder.map(b => `<div><img src="${$('img', b).getAttribute('src')}" alt="${$('img', b).alt}"></div>`).join('')
+      const vzahl = $('.vollbild__zahl', voll)
+      vspur.addEventListener('scroll', () => { vzahl.textContent = `${Math.round(vspur.scrollLeft / vspur.clientWidth) + 1} / ${bilder.length}` }, { passive: true })
+      bilder.forEach((b, i) => b.addEventListener('click', () => {
+        voll.hidden = false; document.documentElement.style.overflow = 'hidden'
+        vspur.scrollLeft = i * vspur.clientWidth; vzahl.textContent = `${i + 1} / ${bilder.length}`
+      }))
+      $('.vollbild__zu', voll).addEventListener('click', () => { voll.hidden = true; document.documentElement.style.overflow = '' })
+    }
     spur.zeige = (name) => {
       const i = bilder.findIndex(b => b.dataset.bild === name)
       if (i >= 0) { spur.scrollTo({ left: i * spur.clientWidth, behavior: 'smooth' }); markiere(i) }
