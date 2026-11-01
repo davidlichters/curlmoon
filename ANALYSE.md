@@ -1,5 +1,7 @@
 # Welcher Teil kommt von welchem Shop (01.11.2026)
 
+**Marke seit 01.11.2026 19:00: Curlmoon** (Musk-Urteil aus 10 Kandidaten, `~/persoenlich/eigener-shop/DOMAINS.md`). Produkt heißt "Curlmoon Nest". Wo unten "Nap Nest" oder "Porchnap" steht, ist der alte Arbeitsname gemeint.
+
 Gemessen: 12 Konkurrenz-Seiten zum Donut-Hundebett, alle im Handyformat (390 px) Streifen für Streifen erfasst und
 ausgewertet. Auswahl: alle Werbenden aus der Meta-Werbebibliothek (USA, aktiv) zu "calming dog bed", "donut dog bed",
 "anxiety dog bed" und "fluffy dog bed" mit eigener Seite, dazu Best Friends by Sheri (Erfinder des Donut-Betts).

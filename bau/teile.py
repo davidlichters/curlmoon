@@ -15,8 +15,8 @@ def leiste():
 def kopf(b):
     # Logo links, kleiner Kopf (41)
     return f'''<header class="kopf"><div class="kopf__innen">
-  <a class="kopf__logo" href="{b}/" aria-label="Porchnap home"><img src="{b}/img/logo_schwarz.webp" alt="Porchnap" width="99" height="22"></a>
-  <nav class="kopf__nav" aria-label="Main"><a href="{b}/products/porchnap-nap-nest/">Shop</a><a href="{b}/products/porchnap-nap-nest/#groessen">Size guide</a><a href="{b}/products/porchnap-nap-nest/#bewertungen">Reviews</a><a href="mailto:support@porchnap.com">Contact</a></nav>
+  <a class="kopf__logo" href="{b}/" aria-label="Curlmoon home"><img src="{b}/img/logo_schwarz.webp" alt="Curlmoon" width="99" height="22"></a>
+  <nav class="kopf__nav" aria-label="Main"><a href="{b}/products/curlmoon-nest/">Shop</a><a href="{b}/products/curlmoon-nest/#groessen">Size guide</a><a href="{b}/products/curlmoon-nest/#bewertungen">Reviews</a><a href="mailto:support@curlmoon.com">Contact</a></nav>
   <div class="kopf__rechts">
     <button class="symbol" data-oeffne="#korb" aria-label="Cart"><svg><use href="#i-korb"/></svg><span class="korb-zahl" data-leer="1">0</span></button>
     <button class="symbol kopf__menue" data-oeffne="#menue" aria-label="Menu"><svg><use href="#i-menue"/></svg></button>
@@ -29,12 +29,12 @@ def schubladen(b):
     return f'''<div class="schublade schublade--rechts" id="menue" aria-hidden="true"><div class="schublade__grund"></div>
   <div class="schublade__tafel"><div class="schublade__kopf"><span>Menu</span><button class="symbol" data-zu aria-label="Close"><svg><use href="#i-zu"/></svg></button></div>
   <ul class="menue-liste">
-    <li><a href="{b}/products/porchnap-nap-nest/">Shop the Nap Nest {pfeil}</a></li>
-    <li><a href="{b}/products/porchnap-nap-nest/#groessen">Size guide {pfeil}</a></li>
-    <li><a href="{b}/products/porchnap-nap-nest/#bewertungen">Reviews {pfeil}</a></li>
-    <li><a href="mailto:support@porchnap.com?subject=Where%20is%20my%20order%3F">Track your order {pfeil}</a></li>
-    <li><a href="{b}/products/porchnap-nap-nest/#fragen">FAQ {pfeil}</a></li>
-    <li><a href="mailto:support@porchnap.com">Contact us {pfeil}</a></li>
+    <li><a href="{b}/products/curlmoon-nest/">Shop the Curlmoon Nest {pfeil}</a></li>
+    <li><a href="{b}/products/curlmoon-nest/#groessen">Size guide {pfeil}</a></li>
+    <li><a href="{b}/products/curlmoon-nest/#bewertungen">Reviews {pfeil}</a></li>
+    <li><a href="mailto:support@curlmoon.com?subject=Where%20is%20my%20order%3F">Track your order {pfeil}</a></li>
+    <li><a href="{b}/products/curlmoon-nest/#fragen">FAQ {pfeil}</a></li>
+    <li><a href="mailto:support@curlmoon.com">Contact us {pfeil}</a></li>
   </ul></div></div>
 <div class="schublade schublade--rechts" id="korb" aria-hidden="true"><div class="schublade__grund"></div>
   <div class="schublade__tafel"><div class="schublade__kopf"><span>Your cart</span><button class="symbol" data-zu aria-label="Close"><svg><use href="#i-zu"/></svg></button></div>
@@ -60,12 +60,11 @@ def zahlarten():
 def fuss(b):
     return f'''<footer class="fuss"><div class="huelle">
   <div class="fuss__raster">
-    <div><img class="fuss__logo" src="{b}/img/logo_creme.webp" alt="Porchnap" width="90" height="20">
+    <div><img class="fuss__logo" src="{b}/img/logo_creme.webp" alt="Curlmoon" width="90" height="20">
       <p style="margin:0;max-width:340px">Cozy beds for dogs who love to curl up. Real humans answer every email within 1 business day.</p>
-      <p style="margin:12px 0 0"><a href="mailto:support@porchnap.com">support@porchnap.com</a> · <a href="https://porchnap.com/pages/contact">Contact form</a></p></div>
-    <div><h5>Help</h5><ul><li><a href="mailto:support@porchnap.com?subject=Where%20is%20my%20order%3F">Track your order</a></li><li><a href="{b}/products/porchnap-nap-nest/#fragen">FAQ</a></li><li><a href="https://porchnap.com/policies/shipping-policy">Shipping policy</a></li><li><a href="https://porchnap.com/policies/refund-policy">30-day money-back guarantee</a></li></ul></div>
-    <div><h5>Legal</h5><ul><li><a href="https://porchnap.com/policies/privacy-policy">Privacy policy</a></li><li><a href="https://porchnap.com/policies/terms-of-service">Terms of service</a></li><li><a href="https://porchnap.com/pages/data-sharing-opt-out">Your privacy choices</a></li></ul></div>
+      <p style="margin:12px 0 0"><a href="mailto:support@curlmoon.com">support@curlmoon.com</a></p></div>
+    <div><h5>Help</h5><ul><li><a href="mailto:support@curlmoon.com?subject=Where%20is%20my%20order%3F">Track your order</a></li><li><a href="{b}/products/curlmoon-nest/#fragen">FAQ</a></li><li><a href="{b}/products/curlmoon-nest/#fragen">Shipping</a></li><li><a href="{b}/products/curlmoon-nest/#garantie">30-day money-back guarantee</a></li></ul></div>
   </div>
   {zahlarten()}
-  <div class="fuss__klein">© 2026 Porchnap · Preview build, not a live store. Reviews shown are placeholders.</div>
+  <div class="fuss__klein">© 2026 Curlmoon · Preview build, not a live store. Reviews shown are placeholders.</div>
 </div></footer>'''

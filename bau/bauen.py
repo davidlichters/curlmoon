@@ -1,5 +1,5 @@
 # Baut die Vorschau-Seiten: bau/seiten/<ziel>.html -> <ziel>, Platzhalter {{...}} aus teile.py.
-# Aufruf: python3 -I bau/bauen.py   (aus dem Ordner porchnap-vorschau)
+# Aufruf: python3 -I bau/bauen.py   (aus dem Ordner curlmoon)
 import pathlib, re, sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import teile
@@ -8,12 +8,12 @@ WURZEL = pathlib.Path(__file__).resolve().parent.parent
 SYMBOLE = (WURZEL / 'assets/symbole.svg.html').read_text()
 SEITEN = {
     'index.html': '.',
-    'products/porchnap-nap-nest/index.html': '../..',
+    'products/curlmoon-nest/index.html': '../..',
 }
 # Abschnitte je Seite, in dieser Reihenfolge aus bau/teil_<name>.html (Begründung je Abschnitt: ANALYSE.md)
 ABSCHNITTE = {
     'index.html': ['vergleich', 'band', 'bewertungen_kurz', 'garantie', 'fragen', 'schluss_home'],
-    'products/porchnap-nap-nest/index.html': ['bew_pdp', 'vergleich', 'band', 'garantie', 'groessen', 'fragen', 'schluss'],
+    'products/curlmoon-nest/index.html': ['bew_pdp', 'vergleich', 'band', 'garantie', 'groessen', 'fragen', 'schluss'],
 }
 
 for ziel, b in SEITEN.items():

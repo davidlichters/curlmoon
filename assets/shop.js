@@ -1,4 +1,4 @@
-// Porchnap Vorschau: Galerie, Auswahl, Mengenstufen, Warenkorb, haftender Kaufbalken.
+// Curlmoon Vorschau: Galerie, Auswahl, Mengenstufen, Warenkorb, haftender Kaufbalken.
 // Keine echte Kasse: "Checkout" zeigt nur einen Hinweis, es wird nichts gesendet.
 (() => {
   const $ = (s, w = document) => w.querySelector(s)
@@ -136,13 +136,13 @@
     const zahl = korb.reduce((s, p) => s + p.menge * p.betten, 0)
     $$('.korb-zahl').forEach(z => { z.textContent = zahl; z.dataset.leer = zahl ? '0' : '1' })
     if (!korb.length) {
-      liste.innerHTML = `<div class="korb__leer"><p>Your cart is empty.</p><a class="knopf" href="${BASIS}/products/porchnap-nap-nest/">Shop the Nap Nest</a></div>`
+      liste.innerHTML = `<div class="korb__leer"><p>Your cart is empty.</p><a class="knopf" href="${BASIS}/products/curlmoon-nest/">Shop the Curlmoon Nest</a></div>`
       $('#korb-summe').textContent = geld(0); return
     }
     liste.innerHTML = `<div class="korb__gut"><b>Good choice.</b> 30 days to try it, and the bed stays either way.</div><div class="korb__hinweis"><svg width="22" height="22"><use href="#i-laster"/></svg><span><b>Free US shipping</b>, duties included. Arrives <b>${spanne}</b> (est.)</span></div>` +
       korb.map((p, i) => `<div class="korb__posten">
         <img src="${BASIS}/img/${FARBEN[p.farbe].bild}.webp" alt="">
-        <div><div class="korb__name">Porchnap Nap Nest${p.betten > 1 ? ' (2 beds)' : ''}</div>
+        <div><div class="korb__name">Curlmoon Nest${p.betten > 1 ? ' (2 beds)' : ''}</div>
         <div class="korb__var">${p.groesse}" · ${FARBEN[p.farbe].name}${p.farbe2 ? ' + ' + FARBEN[p.farbe2].name : ''}</div>
         <div class="menge"><button data-minus="${i}" aria-label="Less">−</button><span>${p.menge}</span><button data-plus="${i}" aria-label="More">+</button></div></div>
         <div class="korb__preis">${geld(p.preis * p.menge)}</div></div>`).join('')
