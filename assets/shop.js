@@ -99,7 +99,7 @@
     const p = stufenPreis(zustand.stufe)
     $$('[data-text="knopfpreis"]').forEach(e => { e.textContent = geld(p.jetzt) })
     $$('[data-haftknopf]').forEach(e => { e.textContent = zustand.groesseGewaehlt ? 'Add to cart' : 'Choose your size' })
-    $$('[data-text="haftpreis"]').forEach(e => { e.textContent = zustand.groesseGewaehlt ? `${zustand.groesse}" · ${geld(p.jetzt)}` : 'from $44.99' })
+    $$('[data-text="haftpreis"]').forEach(e => { e.textContent = zustand.groesseGewaehlt ? `${zustand.groesse}" · ${geld(p.jetzt)}` : 'From $44.99' })
     $$('[data-text="haftend-var"]').forEach(e => {
       e.textContent = `${zustand.groesse}" · ${FARBEN[zustand.farbe].name}${zustand.stufe > 1 ? ' + ' + FARBEN[zustand.farbe2].name : ''}`
     })

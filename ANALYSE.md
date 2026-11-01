@@ -61,3 +61,16 @@ Fristen, kein erfundener Timer, kein "ausverkauft") und D17 (kein Streichpreis b
 4,7 Sterne aus 46 Bewertungen und die zehn Bewertungstexte sind erfunden, nur damit man sieht, wie der Shop nach ein
 paar Wochen aussieht. Sie stehen nur in dieser Vorschau, jede Seite trägt oben den Hinweis. Im echten Shop gilt D22:
 Bewertungs-Widget aus bis zur ersten echten Bewertung.
+
+## Handy zuerst (David 01.11.2026: "Fast niemand öffnet den Shop auf dem Computer")
+
+| Was | Warum |
+| --- | --- |
+| Preis direkt unter dem Titel, Unterzeile darunter | im Facebook- und Instagram-Browser ist der Bildschirm kürzer; der Preis soll ohne Wischen sichtbar sein |
+| Keine Daumenleiste auf dem Handy, dafür Punkte und "1 / 6" auf dem Bild | spart 72 px, Wischen ist auf dem Handy die normale Geste |
+| Bild antippen öffnet Vollbild mit Zwei-Finger-Zoom | beim Fellbett wollen Käufer das Fell aus der Nähe sehen |
+| Kopfleiste verschwindet beim Runterwischen, kommt beim Hochwischen | mehr Platz für Bild und Text |
+| Haftender Kaufbalken unten ab dem ersten Bildschirm; ohne gewählte Größe heißt der Knopf "Choose your size" und springt zu den Größen | jeder Kauf in der falschen Größe kostet uns ein ganzes Bett (Garantie: Bett bleibt beim Kunden) |
+| Größenhilfe als Blatt von unten, Antippen wählt die Größe | man verliert den Kaufbereich nicht |
+| Alle Knöpfe mindestens 44 px hoch, kleinste Schrift 12 bis 13 px | Daumen und Lesbarkeit |
+| Ladezeit gemessen: 1,5 s bis zum Hauptbild bei langsamem 4G mit 4-fach gedrosselter CPU, keine Verschiebungen (CLS 0) | Playbook D23: Ziel unter 4 s; Kurs: 10 statt 5 s kostet deutlich Käufe (Zusätzliche On-Site CRO-Faktoren [24:04]) |
