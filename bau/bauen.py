@@ -10,10 +10,17 @@ SEITEN = {
     'index.html': '.',
     'products/porchnap-nap-nest/index.html': '../..',
 }
+# Abschnitte je Seite, in dieser Reihenfolge aus bau/teil_<name>.html (Begründung je Abschnitt: ANALYSE.md)
+ABSCHNITTE = {
+    'index.html': ['vorteile', 'vergleich', 'bewertungen_kurz', 'garantie', 'fragen', 'schluss_home'],
+    'products/porchnap-nap-nest/index.html': ['fuer', 'vorteile', 'vergleich', 'angebot', 'groessen', 'garantie', 'bewertungen', 'fragen', 'schluss'],
+}
 
 for ziel, b in SEITEN.items():
     quelle = WURZEL / 'bau/seiten' / ziel.replace('/', '__')
     t = quelle.read_text()
+    block = '<!--ABSCHNITTE_ANFANG-->\n' + '\n'.join((WURZEL / f'bau/teil_{k}.html').read_text() for k in ABSCHNITTE[ziel]) + '\n<!--ABSCHNITTE_ENDE-->'
+    t = re.sub(r'<!--ABSCHNITTE_ANFANG-->.*?<!--ABSCHNITTE_ENDE-->', lambda m: block, t, flags=re.S)
     ersatz = {
         'VORSCHAU': teile.vorschau(), 'LEISTE': teile.leiste(), 'KOPF': teile.kopf(b),
         'SCHUBLADEN': teile.schubladen(b), 'FUSS': teile.fuss(b), 'SYMBOLE': SYMBOLE,

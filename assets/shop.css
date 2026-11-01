@@ -358,3 +358,28 @@ button{font-family:inherit;cursor:pointer}
 .zitat{background:var(--creme);border-radius:var(--r);padding:14px 16px;margin:14px 0 4px;font-size:14.5px}
 .zitat p{margin:6px 0 4px;font-style:italic}
 .zitat small{color:var(--grau);font-weight:600}
+/* 3 Schritte */
+.drei{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:720px;margin:20px auto 0;text-align:center}
+.drei div{background:#fff;border-radius:var(--r);padding:12px 8px;box-shadow:var(--schatten)}
+.drei i{font-style:normal;width:28px;height:28px;border-radius:50%;background:var(--rot);color:#fff;font-weight:900;display:grid;place-items:center;margin:0 auto 6px}
+.drei b{display:block;font-size:14px;line-height:1.2}
+.drei span{display:block;font-size:12px;color:var(--grau);line-height:1.25;margin-top:3px}
+/* Angebotskarte */
+.angebot{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;background:#fff;border-radius:var(--r-gross);padding:12px;box-shadow:var(--schatten);max-width:620px;margin:0 auto}
+.angebot img{width:120px;height:120px;object-fit:cover;border-radius:12px;background:var(--creme)}
+.angebot__name{display:block;font-size:18px;font-weight:850;margin-top:2px}
+.angebot__preis{display:block;font-size:14px;color:var(--grau)}
+.angebot__garantie{display:flex;gap:8px;align-items:center;justify-content:center;font-size:14px;font-weight:600;margin:12px 0 0;color:var(--text)}
+.angebot__garantie svg{color:var(--gruen);flex:0 0 18px}
+.farbhinweis{font-size:13px;color:var(--grau);margin-top:7px}
+.lieferweg{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:14px 0;background:var(--creme);border-radius:var(--r);padding:12px 6px;position:relative;text-align:center}
+.lieferweg:before{content:"";position:absolute;top:27px;left:18%;right:18%;height:2px;background:repeating-linear-gradient(90deg,var(--grau-hell) 0 6px,transparent 6px 11px)}
+.lieferweg div{position:relative}
+.lieferweg svg{width:30px;height:30px;padding:5px;border-radius:50%;background:#fff;color:var(--text);display:block;margin:0 auto 4px;position:relative}
+.lieferweg b{display:block;font-size:13.5px;font-weight:800}
+.lieferweg span{display:block;font-size:12px;color:var(--grau)}
+.zweite-farbe{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--rot-hell);border:2px solid var(--rot);border-top:0;border-radius:0 0 var(--r) var(--r);margin-top:-12px;padding:10px 14px;font-size:14px}
+.zweite-farbe[hidden]{display:none}
+.farben--klein{gap:6px}
+.farben--klein .farbe{padding:3px;border-radius:50%}
+.farben--klein .farbe i{width:26px;height:26px}

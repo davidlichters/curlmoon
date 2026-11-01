@@ -28,7 +28,7 @@
       <div class="galerie__bild" data-bild="pn_04_blush"><img src="{{B}}/img/pn_04_blush.webp" alt="Nap Nest in Blush" loading="lazy" width="1100" height="1100"></div>
       <div class="galerie__bild" data-bild="pn_06_groessen"><img src="{{B}}/img/pn_06_groessen.webp" alt="Size chart by weight" loading="lazy" width="1100" height="1100"></div>
     </div>
-    <div class="galerie__plakette"><svg width="15" height="15" style="color:var(--rot)"><use href="#i-herz"/></svg> Made for curling up</div>
+    <div class="galerie__plakette"><svg width="15" height="15" style="color:var(--gruen)"><use href="#i-schild"/></svg> Try it 30 days · keep it either way</div>
     <div class="galerie__punkte"></div>
   </div>
   <div class="daumen" aria-label="Choose image">
@@ -43,7 +43,7 @@
   <div class="pdp__info">
     <a class="sterne-zeile" href="#bewertungen"><span class="sterne" aria-label="4.7 out of 5"><svg><use href="#i-stern"/></svg><svg><use href="#i-stern"/></svg><svg><use href="#i-stern"/></svg><svg><use href="#i-stern"/></svg><svg><use href="#i-stern"/></svg></span><b>4.7</b><u>46 reviews</u></a>
     <h1 class="titel">Porchnap Nap Nest</h1>
-    <p class="unterzeile">The round, fluffy bed for dogs who love to curl up.</p>
+    <p class="unterzeile">The round, fluffy bed they actually use. Get your couch back.</p>
     <div class="preis-zeile"><span class="preis" data-text="preis">$49.99</span><small>Free US shipping</small></div>
     <ul class="haken">
       <li><svg><use href="#i-haken"/></svg><span><b>Raised rim</b> to lean on and rest the chin</span></li>
@@ -58,6 +58,7 @@
         <button class="farbe" data-farbe="cocoa"><i style="background:#6B4A36"></i>Cocoa</button>
         <button class="farbe" data-farbe="blush"><i style="background:#E8B9BE"></i>Blush</button>
       </div>
+      <div class="farbhinweis" data-text="farbhinweis">Calm gray that goes with almost any room.</div>
     </div>
 
     <div class="wahl">
@@ -78,11 +79,19 @@
         <span class="stufe__preis"><span data-stufenpreis="1">$49.99</span></span>
       </button>
       <button class="stufe" data-stufe="2">
-        <span class="stufe__band">Save 15%</span>
+        <span class="stufe__band">Save 10%</span>
         <span class="stufe__punkt"></span>
         <span class="stufe__name">2 Nap Nests<small>One for the living room, one by your bed</small></span>
-        <span class="stufe__preis"><s data-stufenvoll="2">$99.98</s><span data-stufenpreis="2">$84.98</span></span>
+        <span class="stufe__preis"><s data-stufenvoll="2">$99.98</s><span data-stufenpreis="2">$89.98</span></span>
       </button>
+      <div class="zweite-farbe" data-zweite hidden>
+        <span>2nd bed color: <b data-text="farbe2">Blush</b></span>
+        <div class="farben farben--klein">
+          <button class="farbe" data-farbe2="gray"><i style="background:#C9CCD1"></i></button>
+          <button class="farbe" data-farbe2="cocoa"><i style="background:#6B4A36"></i></button>
+          <button class="farbe an" data-farbe2="blush"><i style="background:#E8B9BE"></i></button>
+        </div>
+      </div>
     </div>
 
     <button class="knopf" id="hauptknopf" data-kaufen>Add to cart · <span data-text="knopfpreis">$49.99</span></button>
@@ -92,7 +101,11 @@
     </div>
     {{ZAHLARTEN}}
 
-    <div class="liefer"><svg><use href="#i-kalender"/></svg><span>Order today and it arrives <b data-text="liefer">in 6 to 10 business days</b>, free and tracked</span></div>
+    <div class="lieferweg">
+      <div><svg><use href="#i-korb"/></svg><b>Today</b><span>Order placed</span></div>
+      <div><svg><use href="#i-laster"/></svg><b>Tracked</b><span>Ships free</span></div>
+      <div><svg><use href="#i-paket"/></svg><b data-text="liefer">6–10 days</b><span>At your door</span></div>
+    </div>
     <div class="vertrauen">
       <div><svg><use href="#i-laster"/></svg>Free US<br>shipping</div>
       <div><svg><use href="#i-schild"/></svg>30-day<br>guarantee</div>
@@ -142,8 +155,8 @@
 </section>
 <section class="abschnitt abschnitt--creme" id="vorteile">
   <div class="huelle">
-    <div class="vorzeile">Why dogs settle in</div>
-    <h2 class="ueber">Soft where it <em>counts</em></h2>
+    <div class="vorzeile">The Nap Nest</div>
+    <h2 class="ueber">Why dogs <em>pick it</em></h2>
     <p class="leitsatz">Most dogs sleep curled into a ball with their head on something. A flat bed gives them nothing to lean on. The Nap Nest does.</p>
     <div class="raster6">
       <div><svg><use href="#i-haken-fein"/></svg><b>Raised rim</b><span>to lean on</span></div>
@@ -154,10 +167,10 @@
       <div><svg><use href="#i-schild"/></svg><b>30-day guarantee</b><span>refund, keep the bed</span></div>
     </div>
     <div class="vorteile">
-      <div class="vorteil"><img src="{{B}}/img/A1_nutzen_curling_up.webp" alt="Raised rim to lean on" loading="lazy" width="720" height="900"><div class="vorteil__text"><b>A rim all the way around</b><p>Something to lean on and rest the chin, on every side.</p></div></div>
-      <div class="vorteil"><img src="{{B}}/img/A3_nutzen_naps_deeper.webp" alt="Frenchie sleeping deeply" loading="lazy" width="720" height="900"><div class="vorteil__text"><b>A deep center to sink into</b><p>They turn twice, drop in and stay put.</p></div></div>
-      <div class="vorteil"><img src="{{B}}/img/A4_nutzen_every_part.webp" alt="Every part made to sink into" loading="lazy" width="720" height="900"><div class="vorteil__text"><b>Long faux fur, everywhere</b><p>Soft on the rim, the sides and the middle.</p></div></div>
-      <div class="vorteil"><img src="{{B}}/img/A2_nutzen_soft_every_side.webp" alt="Cocoa Nap Nest" loading="lazy" width="720" height="900"><div class="vorteil__text"><b>Washable, keeps its fluff</b><p>Gentle wash, air dry, shake it out. Done.</p></div></div>
+      <div class="vorteil"><img src="{{B}}/img/A1_nutzen_curling_up.webp" alt="Raised rim to lean on" loading="lazy" width="720" height="900"><div class="vorteil__text"><b>Chin on the rim, not the cold floor</b><p>A raised rim all the way around, so there is always something to lean on.</p></div></div>
+      <div class="vorteil"><img src="{{B}}/img/A3_nutzen_naps_deeper.webp" alt="Frenchie sleeping deeply" loading="lazy" width="720" height="900"><div class="vorteil__text"><b>They sink in instead of perching on top</b><p>A deep, soft center. They turn twice, drop in and stay put.</p></div></div>
+      <div class="vorteil"><img src="{{B}}/img/A4_nutzen_every_part.webp" alt="Every part made to sink into" loading="lazy" width="720" height="900"><div class="vorteil__text"><b>Soft like your lap, on every side</b><p>Long faux fur on the rim, the sides and the middle.</p></div></div>
+      <div class="vorteil"><img src="{{B}}/img/A2_nutzen_soft_every_side.webp" alt="Cocoa Nap Nest" loading="lazy" width="720" height="900"><div class="vorteil__text"><b>Accident? Wash it.</b><p>Gentle wash, air dry, shake it out. Fluffy again.</p></div></div>
     </div>
   </div>
 </section>
@@ -177,6 +190,20 @@
       </tbody></table></div>
   </div>
 </section>
+<section class="abschnitt abschnitt--creme" style="padding:36px 0">
+  <div class="huelle">
+    <div class="angebot">
+      <img src="{{B}}/img/pn_02_cloud_gray.webp" alt="Porchnap Nap Nest" loading="lazy" width="1100" height="1100">
+      <div>
+        <span class="sterne-zeile"><span class="sterne"><svg><use href="#i-stern"/></svg><svg><use href="#i-stern"/></svg><svg><use href="#i-stern"/></svg><svg><use href="#i-stern"/></svg><svg><use href="#i-stern"/></svg></span><b>4.7</b><u>46 reviews</u></span>
+        <b class="angebot__name">Porchnap Nap Nest</b>
+        <span class="angebot__preis">from $44.99 · free US shipping</span>
+        <button class="knopf" data-hoch style="min-height:48px;font-size:16px;margin-top:8px">Choose size &amp; color</button>
+      </div>
+    </div>
+    <p class="angebot__garantie"><svg width="18" height="18"><use href="#i-schild"/></svg> Won't use it within 30 days? Full refund, keep the bed.</p>
+  </div>
+</section>
 <section class="abschnitt abschnitt--sand" id="groessen">
   <div class="huelle">
     <div class="vorzeile">Size guide</div>
@@ -187,6 +214,11 @@
       <button class="groessen-karte" data-groesse="20" data-hoch><img src="{{B}}/img/frei_grau.webp" alt="" style="--b:58%" loading="lazy"><b>20"</b><span>50 cm</span><strong>up to 11 lb</strong><em>e.g. Maltese, Toy Poodle</em></button>
       <button class="groessen-karte" data-groesse="24" data-hoch><img src="{{B}}/img/frei_grau.webp" alt="" style="--b:70%" loading="lazy"><b>24"</b><span>60 cm</span><strong>up to 22 lb</strong><em>e.g. Shih Tzu, Pug</em></button>
       <button class="groessen-karte" data-groesse="28" data-hoch><img src="{{B}}/img/frei_grau.webp" alt="" style="--b:82%" loading="lazy"><b>28"</b><span>70 cm</span><strong>up to 30 lb</strong><em>e.g. Beagle, Frenchie</em></button>
+    </div>
+    <div class="drei">
+      <div><i>1</i><b>Pick the size</b><span>by your dog's weight</span></div>
+      <div><i>2</i><b>Let it fluff</b><span>6 to 12 hours after unpacking</span></div>
+      <div><i>3</i><b>Watch them sink in</b><span>usually on the first night</span></div>
     </div>
     <p class="leitsatz" style="margin-top:18px;margin-bottom:0">Between two sizes? Email <a href="mailto:support@porchnap.com">support@porchnap.com</a> with your dog's weight and we will tell you honestly.</p>
   </div>
@@ -294,6 +326,7 @@
 <details><summary>Can I wash it?</summary><p>Yes. Wash it gently, let it air dry, then shake it to fluff the fur back up.</p></details>
 <details><summary>What if my dog does not use it?</summary><p>Email support@porchnap.com within 30 days of delivery with your order number and a photo of the bed. You get a full refund of the price of the bed and you keep it. One refund per household.</p></details>
 <details><summary>How long does shipping take?</summary><p>Shipping is free on every US order and comes with tracking. Delivery takes 6 to 10 business days.</p></details>
+<details><summary>Is it good for older dogs?</summary><p>Many older dogs love a soft spot with something to rest the head on. It is a plush bed, not a firm orthopedic mattress, so if your vet asked for firm support, choose an orthopedic bed instead.</p></details>
 <details><summary>Is it only for dogs?</summary><p>It is made for dogs up to about 30 lb, and plenty of cats claim it too.</p></details>
     </div>
   </div>
