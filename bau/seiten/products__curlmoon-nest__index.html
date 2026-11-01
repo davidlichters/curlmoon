@@ -8,6 +8,9 @@
 <meta name="description" content="Round faux-fur donut bed with a raised rim to lean on. 4 sizes, 3 colors, washable. Free US shipping, 30-day money-back guarantee.">
 <link rel="preload" href="{{B}}/fonts/Figtree.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{B}}/img/pn_05_schlafen_blush.webp" as="image" fetchpriority="high">
+<meta property="og:title" content="Curlmoon Nest: the round bed made for curling up">
+<meta property="og:description" content="Raised rim, deep soft center, long faux fur. Free US shipping, 30-day money-back guarantee.">
+<meta property="og:image" content="https://davidlichters.github.io/curlmoon/img/og_curlmoon.jpg">
 <link rel="stylesheet" href="{{B}}/assets/shop.css">
 </head>
 <body data-basis="{{B}}">
@@ -69,26 +72,34 @@
         <span class="stufe__preis"><s data-stufenvoll="2">$99.98</s><span data-stufenpreis="2">$89.98</span></span>
       </button>
       <div class="zweite-farbe" data-zweite hidden>
-        <span>2nd bed color: <b data-text="farbe2">Blush</b></span>
-        <div class="farben farben--klein">
-          <button class="farbe" data-farbe2="gray" aria-label="Cloud Gray"><i style="background:#C9CCD1"></i></button>
-          <button class="farbe" data-farbe2="cocoa" aria-label="Cocoa"><i style="background:#6B4A36"></i></button>
-          <button class="farbe an" data-farbe2="blush" aria-label="Blush"><i style="background:#E8B9BE"></i></button>
+        <div class="zweite-farbe__zeile">
+          <span>2nd bed color: <b data-text="farbe2">Cloud Gray</b></span>
+          <div class="farben farben--klein">
+            <button class="farbe an" data-farbe2="gray" aria-label="Cloud Gray"><i style="background:#C9CCD1"></i></button>
+            <button class="farbe" data-farbe2="cocoa" aria-label="Cocoa"><i style="background:#6B4A36"></i></button>
+            <button class="farbe" data-farbe2="blush" aria-label="Blush"><i style="background:#E8B9BE"></i></button>
+          </div>
+        </div>
+        <div class="zweite-farbe__zeile">
+          <span>2nd bed size: <b data-text="groesse2">20"</b></span>
+          <div class="groessen2">
+            <button data-groesse2="16">16"</button><button class="an" data-groesse2="20">20"</button><button data-groesse2="24">24"</button><button data-groesse2="28">28"</button>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="wahl">
-      <div class="wahl__kopf"><span>Color: <b data-text="farbe">Cloud Gray</b></span></div>
+      <div class="wahl__kopf"><span><span data-bett1>Color</span>: <b data-text="farbe">Blush</b></span></div>
       <div class="farben">
-        <button class="farbe an" data-farbe="gray"><i style="background:#C9CCD1"></i>Gray</button>
+        <button class="farbe" data-farbe="gray"><i style="background:#C9CCD1"></i>Gray</button>
         <button class="farbe" data-farbe="cocoa"><i style="background:#6B4A36"></i>Cocoa</button>
-        <button class="farbe" data-farbe="blush"><i style="background:#E8B9BE"></i>Blush</button>
+        <button class="farbe an" data-farbe="blush"><i style="background:#E8B9BE"></i>Blush</button>
       </div>
     </div>
 
     <div class="wahl">
-      <div class="wahl__kopf"><span>Size: <b data-text="groesse">20"</b> · <span data-text="gewicht">dogs up to 11 lb</span></span><button type="button" data-oeffne="#groessenblatt">Size guide</button></div>
+      <div class="wahl__kopf"><span><span data-bett1>Size</span>: <b data-text="groesse">20"</b> · <span data-text="gewicht">dogs up to 11 lb</span></span><button type="button" data-oeffne="#groessenblatt">Size guide</button></div>
       <div class="groessen">
         <button class="groesse" data-groesse="16"><b>16"</b><span>up to 5 lb</span></button>
         <button class="groesse an" data-groesse="20"><b>20"</b><span>up to 11 lb</span></button>
@@ -104,6 +115,7 @@
       <div><svg><use href="#i-laster"/></svg><span><b>Free US shipping</b>, duties included · arrives <b data-text="liefer">in 7–12 business days</b> (est.)</span></div>
       <div><svg><use href="#i-schild"/></svg><span><b>30-day money-back guarantee</b>: not their thing? Full refund, and the bed stays with you.</span></div>
       <div><svg><use href="#i-mail"/></svg><span><b>Real humans</b> answer every email within 1 business day</span></div>
+      <div><svg><use href="#i-herz"/></svg><span><b>Gift for a dog parent?</b> Ship it straight to them.</span></div>
     </div>
     {{ZAHLARTEN}}
 
@@ -139,7 +151,7 @@
 <div class="haftend" aria-hidden="true">
   <button class="haftend__wahl" data-oeffne="#groessenblatt" aria-label="Change size">
     <img src="{{B}}/img/pn_02_cloud_gray.webp" alt="" data-haftbild>
-    <span class="haftend__text"><b data-text="haftwahl">20" · Cloud Gray</b><span class="haftend__liefer">Change size ›</span></span>
+    <span class="haftend__text"><b data-text="haftwahl">20" · Blush</b><span class="haftend__liefer">Change size ›</span></span>
   </button>
   <button class="knopf" data-kaufen>Add to cart · <span data-text="knopfpreis">$49.99</span></button>
 </div>

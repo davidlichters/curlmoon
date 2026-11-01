@@ -9,6 +9,10 @@ SYMBOLE = (WURZEL / 'assets/symbole.svg.html').read_text()
 SEITEN = {
     'index.html': '.',
     'products/curlmoon-nest/index.html': '../..',
+    'pages/about-us/index.html': '../..',
+    'pages/contact/index.html': '../..',
+    'pages/shipping-policy/index.html': '../..',
+    'pages/refund-policy/index.html': '../..',
 }
 # Abschnitte je Seite, in dieser Reihenfolge aus bau/teil_<name>.html (Begründung je Abschnitt: ANALYSE.md)
 ABSCHNITTE = {
@@ -19,7 +23,7 @@ ABSCHNITTE = {
 for ziel, b in SEITEN.items():
     quelle = WURZEL / 'bau/seiten' / ziel.replace('/', '__')
     t = quelle.read_text()
-    block = '<!--ABSCHNITTE_ANFANG-->\n' + '\n'.join((WURZEL / f'bau/teil_{k}.html').read_text() for k in ABSCHNITTE[ziel]) + '\n<!--ABSCHNITTE_ENDE-->'
+    block = '<!--ABSCHNITTE_ANFANG-->\n' + '\n'.join((WURZEL / f'bau/teil_{k}.html').read_text() for k in ABSCHNITTE.get(ziel, [])) + '\n<!--ABSCHNITTE_ENDE-->'
     t = re.sub(r'<!--ABSCHNITTE_ANFANG-->.*?<!--ABSCHNITTE_ENDE-->', lambda m: block, t, flags=re.S)
     ersatz = {
         'VORSCHAU': teile.vorschau(), 'LEISTE': teile.leiste(), 'KOPF': teile.kopf(b),

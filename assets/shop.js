@@ -32,7 +32,7 @@
   const von = plusWerktage(heute, 7); const bis = plusWerktage(heute, 12)
   const spanne = von.getMonth() === bis.getMonth() ? `${tag(von)}–${bis.getDate()}` : `${tag(von)} – ${tag(bis)}`
 
-  const zustand = { groesse: 20, farbe: 'gray', farbe2: 'blush', stufe: 1 }
+  const zustand = { groesse: 20, farbe: 'blush', farbe2: 'gray', groesse2: 20, stufe: 1 }
   let korb = []
   try { korb = JSON.parse(sessionStorage.getItem('pn_korb') || '[]') } catch {}
 
@@ -91,8 +91,7 @@
 
   // ---------- Auswahl und Preise
   function stufenPreis (stufe) {
-    const einzel = PREISE[zustand.groesse]
-    const voll = einzel * stufe
+    const voll = stufe > 1 ? PREISE[zustand.groesse] + PREISE[zustand.groesse2] : PREISE[zustand.groesse]
     return { voll, jetzt: Math.round(voll * (1 - STUFEN[stufe]) * 100) / 100 }
   }
   function zeichne () {
@@ -101,6 +100,9 @@
     $$('[data-stufe]').forEach(b => b.classList.toggle('an', +b.dataset.stufe === zustand.stufe))
     $$('[data-zweite]').forEach(e => { e.hidden = zustand.stufe !== 2 })
     $$('[data-farbe2]').forEach(b => b.classList.toggle('an', b.dataset.farbe2 === zustand.farbe2))
+    $$('[data-groesse2]').forEach(b => b.classList.toggle('an', +b.dataset.groesse2 === zustand.groesse2))
+    $$('[data-bett1]').forEach(e => { const w = e.textContent.replace(/^1st bed /i, ''); e.textContent = zustand.stufe > 1 ? `1st bed ${w.toLowerCase()}` : w.charAt(0).toUpperCase() + w.slice(1) })
+    $$('[data-text="groesse2"]').forEach(e => { e.textContent = zustand.groesse2 + '"' })
     $$('[data-text="farbe2"]').forEach(e => { e.textContent = FARBEN[zustand.farbe2].name })
     $$('[data-text="farbe"]').forEach(e => { e.textContent = FARBEN[zustand.farbe].name })
     $$('[data-text="farbhinweis"]').forEach(e => { e.textContent = FARBEN[zustand.farbe].hinweis })
@@ -118,7 +120,9 @@
     $$('[data-text="knopfpreis"]').forEach(e => { e.textContent = geld(p.jetzt) })
     // Kaufbalken zeigt die Auswahl und kauft direkt (RANGLISTE R1: ein Balken, der nur springt, bringt keine Bestellungen)
     $$('[data-text="haftwahl"]').forEach(e => {
-      e.textContent = `${zustand.groesse}" · ${FARBEN[zustand.farbe].name}${zustand.stufe > 1 ? ' + ' + FARBEN[zustand.farbe2].name : ''}`
+      e.textContent = zustand.stufe > 1
+        ? `${zustand.groesse}" ${FARBEN[zustand.farbe].name} + ${zustand.groesse2}" ${FARBEN[zustand.farbe2].name}`
+        : `${zustand.groesse}" · ${FARBEN[zustand.farbe].name}`
     })
     $$('[data-haftbild]').forEach(e => { e.src = `${BASIS}/img/${FARBEN[zustand.farbe].bild}.webp` })
   }
@@ -128,6 +132,7 @@
   }))
   $$('[data-stufe]').forEach(b => b.addEventListener('click', () => { zustand.stufe = +b.dataset.stufe; zeichne() }))
   $$('[data-farbe2]').forEach(b => b.addEventListener('click', () => { zustand.farbe2 = b.dataset.farbe2; zeichne() }))
+  $$('[data-groesse2]').forEach(b => b.addEventListener('click', () => { zustand.groesse2 = +b.dataset.groesse2; zeichne() }))
 
   // ---------- Warenkorb
   function speichere () { try { sessionStorage.setItem('pn_korb', JSON.stringify(korb)) } catch {} }
@@ -143,11 +148,13 @@
       korb.map((p, i) => `<div class="korb__posten">
         <img src="${BASIS}/img/${FARBEN[p.farbe].bild}.webp" alt="">
         <div><div class="korb__name">Curlmoon Nest${p.betten > 1 ? ' (2 beds)' : ''}</div>
-        <div class="korb__var">${p.groesse}" · ${FARBEN[p.farbe].name}${p.farbe2 ? ' + ' + FARBEN[p.farbe2].name : ''}</div>
+        <div class="korb__var">${p.groesse}" ${FARBEN[p.farbe].name}${p.farbe2 ? ' + ' + (p.groesse2 || p.groesse) + '" ' + FARBEN[p.farbe2].name : ''}</div>
         <div class="menge"><button data-minus="${i}" aria-label="Less">−</button><span>${p.menge}</span><button data-plus="${i}" aria-label="More">+</button></div></div>
         <div class="korb__preis">${geld(p.preis * p.menge)}</div></div>`).join('')
+    liste.insertAdjacentHTML('beforeend', `<label class="korb__geschenk"><input type="checkbox" data-geschenk ${zustand.geschenk ? 'checked' : ''}> <span><b>This is a gift.</b> Enter the recipient's address as the shipping address at checkout.</span></label>`)
     $('#korb-summe').textContent = geld(korb.reduce((s, p) => s + p.preis * p.menge, 0))
   }
+  document.addEventListener('change', (e) => { if (e.target.matches('[data-geschenk]')) zustand.geschenk = e.target.checked })
   document.addEventListener('click', (e) => {
     const plus = e.target.closest('[data-plus]'); const minus = e.target.closest('[data-minus]')
     if (plus) { korb[+plus.dataset.plus].menge++; speichere(); zeichneKorb() }
@@ -155,14 +162,15 @@
   })
   function inDenKorb () {
     const p = stufenPreis(zustand.stufe)
-    const schluessel = `${zustand.groesse}-${zustand.farbe}-${zustand.stufe}-${zustand.stufe > 1 ? zustand.farbe2 : ''}`
+    const schluessel = `${zustand.groesse}-${zustand.farbe}-${zustand.stufe}-${zustand.stufe > 1 ? zustand.groesse2 + zustand.farbe2 : ''}`
     const da = korb.find(k => k.schluessel === schluessel)
     if (da) da.menge++
-    else korb.push({ schluessel, groesse: zustand.groesse, farbe: zustand.farbe, farbe2: zustand.stufe > 1 ? zustand.farbe2 : null, betten: zustand.stufe, preis: p.jetzt, menge: 1 })
+    else korb.push({ schluessel, groesse: zustand.groesse, farbe: zustand.farbe, farbe2: zustand.stufe > 1 ? zustand.farbe2 : null, groesse2: zustand.stufe > 1 ? zustand.groesse2 : null, betten: zustand.stufe, preis: p.jetzt, menge: 1 })
     speichere(); zeichneKorb(); oeffne('#korb')
   }
   $$('[data-kaufen]').forEach(b => b.addEventListener('click', inDenKorb))
   $$('[data-kasse]').forEach(b => b.addEventListener('click', () => toast('Preview only: no real checkout here.')))
+  $$('[data-kontakt]').forEach(f => f.addEventListener('submit', (e) => { e.preventDefault(); toast('Preview only: the form goes live with the store.') }))
 
   // ---------- Haftender Kaufbalken: erscheint, sobald der Hauptknopf aus dem Bild ist
   // sichtbar, solange weder der Hauptknopf noch der Knopf am Seitenende im Bild ist

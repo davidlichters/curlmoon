@@ -105,9 +105,18 @@ EW26 und DMA26 (Kaching, Preis, Upsell, Q4, Oodie).
 | Größentabelle mit Lieferantenmaßen (15,7 / 19,7 / 23,6 / 27,6 in) und Messregel "Nase bis Schwanzansatz plus 4 in" | 1; 09_varianten_groesse.md |
 | FAQ in den Worten der Käufer: benutzt er es, flach bei Ankunft (Lieferant: Füllung verreiben, 6 bis 12 h), waschen ohne Trockner, nicht kaufest, Geschenk | Kundenrecherche, Lieferantenbild vakuum_B.png |
 | Warenkorb: Lieferdatum, Schloss am Knopf, Shop Pay und G Pay, Zahlungssymbole, keine Zusatzprodukte | 38, 53, 70; Apps-Lektion "upsells off until scaling" |
-| Fuß: Track your order, Richtlinien, Your privacy choices, zweiter Kontaktweg (Formular) | 15, 61, 78 |
+| Fuß: Track your order, Versand- und Rückgabe-Richtlinie, About us, Kontaktseite mit Formular (zweiter Kontaktweg); Datenschutz und AGB erzeugt Shopify im echten Shop | 15, 61, 77, 78 |
 | Zweiter echter Kaufknopf am Seitenende | 32 |
 
 **Für den echten Shop noch offen:** echte Bewertungen (bis dahin Sterne und Widget aus, D22), Rabatt für 2 Betten in
-Shopify anlegen, Gratis-Ratgeber als PDF (Kurs-Prompt "Ebook PDF") erst dann ins Bündel, Größe je Bett im 2er-Bündel,
+Shopify anlegen, Gratis-Ratgeber als PDF (Kurs-Prompt "Ebook PDF") erst dann ins Bündel,
 Kurzvideo vom Muster (3 bis 10 s), Lieferzeit vom Lieferanten schriftlich (A8), Nachkauf-Angebot 2. Bett (Upsell-Lektion).
+
+## Musk-Prüfung 01.11.2026 19:10 und Umbau
+
+Urteil "nicht perfekt" (`~/persoenlich/musk/urteile/2026-11-01_184856.md`), alle im Code lösbaren Lücken umgesetzt:
+Größe und Farbe je Bett im 2er-Angebot, Startfarbe Blush wie Bild 1, Seiten About us (Aufbau nach dem Kurs-Prompt
+"Drop Ship Lifestyle - About Us Page Prompt", nur wahre Angaben), Kontakt mit Formular, Versand- und Rückgabe-Richtlinie
+(aus den Repo-Texten nach den Kurs-Prompts), Geschenkzeile unter dem Knopf und Häkchen "This is a gift" im Warenkorb
+(Regeln 68, 86), Vorschaubild 1200x628 (Regel 99), eigene Curlmoon-Anzeigen in `anzeigen/` (12 Bilder ohne Husky,
+Texte mit Ziel-Link und Farbe je Bild, Regel 24 und 66).

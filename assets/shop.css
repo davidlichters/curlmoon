@@ -472,3 +472,22 @@ button{font-family:inherit;cursor:pointer}
 .schluss__wahl{margin:12px 0 0;color:var(--grau);font-size:14.5px}
 .schluss__wahl button{background:none;border:0;padding:0;color:var(--grau);text-decoration:underline;font-size:14.5px}
 .schluss img{max-width:300px}
+/* 2 Betten: Farbe und Größe je Bett (Musk-Prüfung 01.11.) */
+.zweite-farbe{display:block}
+.zweite-farbe__zeile{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:4px 0}
+.groessen2{display:flex;gap:6px}
+.groessen2 button{min-width:46px;height:38px;border:2px solid var(--linie);border-radius:8px;background:#fff;font-weight:800;font-size:14px;color:var(--text)}
+.groessen2 button.an{border-color:var(--text);background:var(--creme)}
+.korb__geschenk{display:flex;gap:10px;align-items:flex-start;font-size:14px;padding:12px 2px;border-top:1px solid var(--linie);margin-top:8px}
+.korb__geschenk input{width:20px;height:20px;margin:1px 0 0;accent-color:var(--text)}
+/* Textseiten: About, Kontakt, Richtlinien */
+.seite{max-width:720px;padding-top:28px;padding-bottom:40px}
+.seite h1{font-size:32px;line-height:1.1;font-weight:850;letter-spacing:-.015em;margin:0 0 12px}
+.seite h2{font-size:20px;margin:26px 0 6px}
+.seite p{font-size:17px;margin:0 0 12px;color:#333}
+.seite__lead{font-size:18px!important;color:var(--grau)!important}
+.seite__zurueck{margin-top:28px!important}
+.kontakt{display:grid;gap:12px;margin:18px 0 20px}
+.kontakt label{display:grid;gap:6px;font-weight:700;font-size:14.5px}
+.kontakt input,.kontakt textarea{font:inherit;font-size:16px;padding:12px;border:1px solid var(--linie);border-radius:var(--r);background:#fff}
+@media(min-width:800px){.fuss__raster{grid-template-columns:2fr 1fr 1fr}}

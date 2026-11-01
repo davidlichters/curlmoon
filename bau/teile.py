@@ -34,7 +34,8 @@ def schubladen(b):
     <li><a href="{b}/products/curlmoon-nest/#bewertungen">Reviews {pfeil}</a></li>
     <li><a href="mailto:support@curlmoon.com?subject=Where%20is%20my%20order%3F">Track your order {pfeil}</a></li>
     <li><a href="{b}/products/curlmoon-nest/#fragen">FAQ {pfeil}</a></li>
-    <li><a href="mailto:support@curlmoon.com">Contact us {pfeil}</a></li>
+    <li><a href="{b}/pages/about-us/">About us {pfeil}</a></li>
+    <li><a href="{b}/pages/contact/">Contact us {pfeil}</a></li>
   </ul></div></div>
 <div class="schublade schublade--rechts" id="korb" aria-hidden="true"><div class="schublade__grund"></div>
   <div class="schublade__tafel"><div class="schublade__kopf"><span>Your cart</span><button class="symbol" data-zu aria-label="Close"><svg><use href="#i-zu"/></svg></button></div>
@@ -61,9 +62,10 @@ def fuss(b):
     return f'''<footer class="fuss"><div class="huelle">
   <div class="fuss__raster">
     <div><img class="fuss__logo" src="{b}/img/logo_creme.webp" alt="Curlmoon" width="90" height="20">
-      <p style="margin:0;max-width:340px">Cozy beds for dogs who love to curl up. Real humans answer every email within 1 business day.</p>
-      <p style="margin:12px 0 0"><a href="mailto:support@curlmoon.com">support@curlmoon.com</a></p></div>
-    <div><h5>Help</h5><ul><li><a href="mailto:support@curlmoon.com?subject=Where%20is%20my%20order%3F">Track your order</a></li><li><a href="{b}/products/curlmoon-nest/#fragen">FAQ</a></li><li><a href="{b}/products/curlmoon-nest/#fragen">Shipping</a></li><li><a href="{b}/products/curlmoon-nest/#garantie">30-day money-back guarantee</a></li></ul></div>
+      <p style="margin:0;max-width:340px">Soft, round beds for dogs who sleep curled up. Real humans answer every email within 1 business day.</p>
+      <p style="margin:12px 0 0"><a href="mailto:support@curlmoon.com">support@curlmoon.com</a> · <a href="{b}/pages/contact/">Contact form</a></p></div>
+    <div><h5>Help</h5><ul><li><a href="mailto:support@curlmoon.com?subject=Where%20is%20my%20order%3F">Track your order</a></li><li><a href="{b}/products/curlmoon-nest/#fragen">FAQ</a></li><li><a href="{b}/pages/shipping-policy/">Shipping policy</a></li><li><a href="{b}/pages/refund-policy/">30-day money-back guarantee</a></li></ul></div>
+    <div><h5>Company</h5><ul><li><a href="{b}/pages/about-us/">About us</a></li><li><a href="{b}/pages/contact/">Contact</a></li></ul></div>
   </div>
   {zahlarten()}
   <div class="fuss__klein">© 2026 Curlmoon · Preview build, not a live store. Reviews shown are placeholders.</div>
