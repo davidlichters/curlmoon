@@ -19,6 +19,7 @@
 <main>
 <!-- ================= Kaufbereich ================= -->
 <section class="huelle pdp" id="kaufen-oben">
+  <div class="medien">
   <div class="galerie">
     <div class="galerie__spur" aria-label="Product images">
       <div class="galerie__bild" data-bild="pn_01_hund_cloud_gray"><img src="{{B}}/img/pn_01_hund_cloud_gray.webp" alt="Dog sitting in the Cloud Gray Nap Nest" width="1100" height="1100" fetchpriority="high"></div>
@@ -30,6 +31,7 @@
     </div>
     <div class="galerie__plakette"><svg width="15" height="15" style="color:var(--gruen)"><use href="#i-schild"/></svg> Try it 30 days · keep it either way</div>
     <div class="galerie__punkte"></div>
+    <div class="galerie__zahl"><span data-bildnr>1</span> / 6</div>
   </div>
   <div class="daumen" aria-label="Choose image">
     <button aria-label="Image 1"><img src="{{B}}/img/pn_01_hund_cloud_gray.webp" alt="" loading="lazy"></button>
@@ -38,6 +40,7 @@
     <button aria-label="Image 4"><img src="{{B}}/img/pn_03_cocoa.webp" alt="" loading="lazy"></button>
     <button aria-label="Image 5"><img src="{{B}}/img/pn_04_blush.webp" alt="" loading="lazy"></button>
     <button aria-label="Image 6"><img src="{{B}}/img/pn_06_groessen.webp" alt="" loading="lazy"></button>
+  </div>
   </div>
 
   <div class="pdp__info">
@@ -62,7 +65,7 @@
     </div>
 
     <div class="wahl">
-      <div class="wahl__kopf"><span>Size: <b data-text="groesse">20"</b> · <span data-text="gewicht">up to 11 lb</span></span><a href="#groessen">Size guide</a></div>
+      <div class="wahl__kopf"><span>Size: <b data-text="groesse">20"</b> · <span data-text="gewicht">up to 11 lb</span></span><button type="button" data-oeffne="#groessenblatt">Size guide</button></div>
       <div class="groessen">
         <button class="groesse" data-groesse="16"><b>16"</b><span>up to 5 lb</span></button>
         <button class="groesse an" data-groesse="20"><b>20"</b><span>up to 11 lb</span></button>
@@ -107,9 +110,9 @@
       <div><svg><use href="#i-paket"/></svg><b data-text="liefer">6–10 days</b><span>At your door</span></div>
     </div>
     <div class="vertrauen">
-      <div><svg><use href="#i-laster"/></svg>Free US<br>shipping</div>
-      <div><svg><use href="#i-schild"/></svg>30-day<br>guarantee</div>
-      <div><svg><use href="#i-waschen"/></svg>Washable<br>faux fur</div>
+      <div><svg><use href="#i-laster"/></svg><b>Free US shipping</b><span>6–10 business days</span></div>
+      <div><svg><use href="#i-schild"/></svg><b>30-day refund</b><span>you keep the bed</span></div>
+      <div><svg><use href="#i-mail"/></svg><b>Real humans</b><span>reply in 1 business day</span></div>
     </div>
     <div class="zitat"><span class="sterne"><svg><use href="#i-stern"/></svg><svg><use href="#i-stern"/></svg><svg><use href="#i-stern"/></svg><svg><use href="#i-stern"/></svg><svg><use href="#i-stern"/></svg></span>
       <p>"First night she stepped in, turned twice and put her chin on the rim. Hasn't gone back to the couch since."</p>
@@ -344,10 +347,22 @@
 
 <div class="haftend" aria-hidden="true">
   <img src="{{B}}/img/pn_02_cloud_gray.webp" alt="">
-  <div class="haftend__text"><b>Nap Nest · <span data-text="haftend-var">20" · Cloud Gray</span></b><span style="color:var(--gruen);font-weight:700">Free shipping · arrives <span data-text="liefer">in 6–10 days</span></span></div>
-  <button class="knopf" data-kaufen>Add to cart · <span data-text="knopfpreis">$49.99</span></button>
+  <div class="haftend__text"><b>Nap Nest · <span data-text="haftpreis">from $44.99</span></b><span style="color:var(--gruen);font-weight:700">Free shipping · arrives <span data-text="liefer">in 6–10 days</span></span></div>
+  <button class="knopf" data-haftknopf>Choose your size</button>
 </div>
 
+<div class="schublade schublade--unten" id="groessenblatt" aria-hidden="true"><div class="schublade__grund"></div>
+  <div class="schublade__tafel"><div class="schublade__kopf"><span>Find the right size</span><button class="symbol" data-zu aria-label="Close"><svg><use href="#i-zu"/></svg></button></div>
+  <div class="blatt__inhalt">
+    <p class="blatt__regel">Pick by weight. Between two sizes? <b>Size up.</b> Sleeps stretched out flat? Go one more size up.</p>
+    <div class="blatt__liste">
+      <button data-groesse="16" data-zu><b>16"</b><span>40 cm</span><strong>up to 5 lb</strong><em>Chihuahua, Yorkie</em></button>
+      <button data-groesse="20" data-zu><b>20"</b><span>50 cm</span><strong>up to 11 lb</strong><em>Maltese, Toy Poodle</em></button>
+      <button data-groesse="24" data-zu><b>24"</b><span>60 cm</span><strong>up to 22 lb</strong><em>Shih Tzu, Pug</em></button>
+      <button data-groesse="28" data-zu><b>28"</b><span>70 cm</span><strong>up to 30 lb</strong><em>Beagle, Frenchie</em></button>
+    </div>
+    <p class="blatt__klein">Outer diameter. Not sure? Email support@porchnap.com with your dog's weight and we will tell you honestly.</p>
+  </div></div></div>
 {{FUSS}}
 {{SCHUBLADEN}}
 <script src="{{B}}/assets/shop.js" defer></script>

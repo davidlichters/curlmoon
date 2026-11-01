@@ -15,7 +15,7 @@
   const STUFEN = { 1: 0, 2: 0.10 } // 1 Bett voller Preis (D17), 2 Betten 10 %: mehr hält die 67 % Marge (D1) bei 24" und 28" nicht
   const BASIS = document.body.dataset.basis || '.'
 
-  const zustand = { groesse: 20, farbe: 'gray', farbe2: 'blush', stufe: 1 }
+  const zustand = { groesse: 20, farbe: 'gray', farbe2: 'blush', stufe: 1, groesseGewaehlt: false }
   let korb = []
   try { korb = JSON.parse(sessionStorage.getItem('pn_korb') || '[]') } catch {}
 
@@ -42,6 +42,7 @@
     const daumen = $$('.daumen button')
     if (punkte) punkte.innerHTML = bilder.map(() => '<i></i>').join('')
     const markiere = (i) => {
+      $$('[data-bildnr]').forEach(e => { e.textContent = i + 1 })
       $$('.galerie__punkte i').forEach((p, k) => p.classList.toggle('an', k === i))
       daumen.forEach((d, k) => d.classList.toggle('an', k === i))
     }
@@ -84,11 +85,13 @@
     }
     const p = stufenPreis(zustand.stufe)
     $$('[data-text="knopfpreis"]').forEach(e => { e.textContent = geld(p.jetzt) })
+    $$('[data-haftknopf]').forEach(e => { e.textContent = zustand.groesseGewaehlt ? 'Add to cart' : 'Choose your size' })
+    $$('[data-text="haftpreis"]').forEach(e => { e.textContent = zustand.groesseGewaehlt ? `${zustand.groesse}" · ${geld(p.jetzt)}` : 'from $44.99' })
     $$('[data-text="haftend-var"]').forEach(e => {
       e.textContent = `${zustand.groesse}" · ${FARBEN[zustand.farbe].name}${zustand.stufe > 1 ? ' + ' + FARBEN[zustand.farbe2].name : ''}`
     })
   }
-  $$('[data-groesse]').forEach(b => b.addEventListener('click', () => { zustand.groesse = +b.dataset.groesse; zeichne() }))
+  $$('[data-groesse]').forEach(b => b.addEventListener('click', () => { zustand.groesse = +b.dataset.groesse; zustand.groesseGewaehlt = true; zeichne() }))
   $$('[data-farbe]').forEach(b => b.addEventListener('click', () => {
     zustand.farbe = b.dataset.farbe; zeichne(); spur?.zeige?.(FARBEN[zustand.farbe].bild)
   }))
@@ -105,7 +108,7 @@
       liste.innerHTML = `<div class="korb__leer"><p>Your cart is empty.</p><a class="knopf" href="${BASIS}/products/porchnap-nap-nest/">Shop the Nap Nest</a></div>`
       $('#korb-summe').textContent = geld(0); return
     }
-    liste.innerHTML = `<div class="korb__hinweis"><svg width="22" height="22"><use href="#i-laster"/></svg><span><b>Free US shipping</b> is included on every order.</span></div>` +
+    liste.innerHTML = `<div class="korb__gut"><b>Good choice.</b> 30 days to try it, and the bed stays either way.</div><div class="korb__hinweis"><svg width="22" height="22"><use href="#i-laster"/></svg><span><b>Free US shipping</b> is included on every order.</span></div>` +
       korb.map((p, i) => `<div class="korb__posten">
         <img src="${BASIS}/img/${FARBEN[p.farbe].bild}.webp" alt="">
         <div><div class="korb__name">Porchnap Nap Nest${p.betten > 1 ? ' (2 beds)' : ''}</div>
@@ -133,12 +136,21 @@
   // ---------- Haftender Kaufbalken: erscheint, sobald der Hauptknopf aus dem Bild ist
   const haupt = $('#hauptknopf'); const haftend = $('.haftend')
   if (haupt && haftend && 'IntersectionObserver' in window) {
-    let unterKnopf = false
-    new IntersectionObserver(([e]) => {
-      unterKnopf = !e.isIntersecting && e.boundingClientRect.top < 0
-      haftend.classList.toggle('zeigen', unterKnopf)
-    }).observe(haupt)
+    new IntersectionObserver(([e]) => { haftend.classList.toggle('zeigen', !e.isIntersecting) }).observe(haupt)
   }
+  $$('[data-haftknopf]').forEach(b => b.addEventListener('click', () => {
+    if (zustand.groesseGewaehlt) return inDenKorb()
+    const wahl = $('.groessen'); if (!wahl) return
+    wahl.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    setTimeout(() => $$('.groesse', wahl).forEach(g => { g.classList.remove('wackeln'); void g.offsetWidth; g.classList.add('wackeln') }), 450)
+  }))
+  // Kopf beim Runterwischen ausblenden, beim Hochwischen zeigen (nur Handy)
+  const kopf = $('.kopf'); let zuletzt = scrollY
+  addEventListener('scroll', () => {
+    const y = scrollY
+    if (kopf && innerWidth < 900) kopf.classList.toggle('weg', y > zuletzt && y > 220)
+    zuletzt = y
+  }, { passive: true })
   $$('[data-hoch]').forEach(b => b.addEventListener('click', () => { $('#kaufen-oben')?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }))
 
   // ---------- Bewertungen: Filter und "mehr"
@@ -160,6 +172,9 @@
   const von = plusWerktage(heute, 6); const bis = plusWerktage(heute, 10)
   const spanne = von.getMonth() === bis.getMonth() ? `${tag(von)}–${bis.getDate()}` : `${tag(von)} – ${tag(bis)}`
   $$('[data-text="liefer"]').forEach(e => { e.textContent = spanne })
+
+  const farbeAusAdresse = new URLSearchParams(location.search).get('color')
+  if (farbeAusAdresse && FARBEN[farbeAusAdresse]) { zustand.farbe = farbeAusAdresse; setTimeout(() => spur?.zeige?.(FARBEN[farbeAusAdresse].bild), 50) }
 
   zeichne(); zeichneKorb()
 })()
