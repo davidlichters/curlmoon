@@ -2,7 +2,7 @@
 # Regeln: WEBSITE_CHECKLISTE_MOBIL.md (Repo ecom), Nummern in Klammern.
 
 def vorschau():
-    return '<div class="vorschau"><b>VORSCHAU</b> · der echte Shop ist curlmoon.com</div>'
+    return '<div class="vorschau"><b>VORSCHAU</b> · Sterne und Bewertungen sind Platzhalter</div>'
 
 
 def leiste():
@@ -16,7 +16,7 @@ def kopf(b):
     # Logo links, kleiner Kopf (41)
     return f'''<header class="kopf"><div class="kopf__innen">
   <a class="kopf__logo" href="{b}/" aria-label="Curlmoon home"><img src="{b}/img/logo_schwarz.webp" alt="Curlmoon" width="99" height="22"></a>
-  <nav class="kopf__nav" aria-label="Main"><a href="{b}/products/curlmoon-nest/">Shop</a><a href="{b}/products/curlmoon-nest/#groessen">Size guide</a><a href="{b}/pages/contact/">Contact</a></nav>
+  <nav class="kopf__nav" aria-label="Main"><a href="{b}/products/curlmoon-nest/">Shop</a><a href="{b}/products/curlmoon-nest/#groessen">Size guide</a><a href="{b}/products/curlmoon-nest/#bewertungen">Reviews</a><a href="mailto:curlmoon@lichters.email">Contact</a></nav>
   <div class="kopf__rechts">
     <button class="symbol" data-oeffne="#korb" aria-label="Cart"><svg><use href="#i-korb"/></svg><span class="korb-zahl" data-leer="1">0</span></button>
     <button class="symbol kopf__menue" data-oeffne="#menue" aria-label="Menu"><svg><use href="#i-menue"/></svg></button>
@@ -31,6 +31,7 @@ def schubladen(b):
   <ul class="menue-liste">
     <li><a href="{b}/products/curlmoon-nest/">Shop the Curlmoon Nest {pfeil}</a></li>
     <li><a href="{b}/products/curlmoon-nest/#groessen">Size guide {pfeil}</a></li>
+    <li><a href="{b}/products/curlmoon-nest/#bewertungen">Reviews {pfeil}</a></li>
     <li><a href="mailto:curlmoon@lichters.email?subject=Where%20is%20my%20order%3F">Track your order {pfeil}</a></li>
     <li><a href="{b}/products/curlmoon-nest/#fragen">FAQ {pfeil}</a></li>
     <li><a href="{b}/pages/about-us/">About us {pfeil}</a></li>
