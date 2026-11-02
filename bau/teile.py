@@ -2,7 +2,7 @@
 # Regeln: WEBSITE_CHECKLISTE_MOBIL.md (Repo ecom), Nummern in Klammern.
 
 def vorschau():
-    return '<div class="vorschau"><b>VORSCHAU</b> · Sterne und Bewertungen sind Platzhalter</div>'
+    return '<div class="vorschau"><b>VORSCHAU</b> · der echte Shop ist curlmoon.com</div>'
 
 
 def leiste():
@@ -16,7 +16,7 @@ def kopf(b):
     # Logo links, kleiner Kopf (41)
     return f'''<header class="kopf"><div class="kopf__innen">
   <a class="kopf__logo" href="{b}/" aria-label="Curlmoon home"><img src="{b}/img/logo_schwarz.webp" alt="Curlmoon" width="99" height="22"></a>
-  <nav class="kopf__nav" aria-label="Main"><a href="{b}/products/curlmoon-nest/">Shop</a><a href="{b}/products/curlmoon-nest/#groessen">Size guide</a><a href="{b}/products/curlmoon-nest/#bewertungen">Reviews</a><a href="mailto:support@curlmoon.com">Contact</a></nav>
+  <nav class="kopf__nav" aria-label="Main"><a href="{b}/products/curlmoon-nest/">Shop</a><a href="{b}/products/curlmoon-nest/#groessen">Size guide</a><a href="{b}/pages/contact/">Contact</a></nav>
   <div class="kopf__rechts">
     <button class="symbol" data-oeffne="#korb" aria-label="Cart"><svg><use href="#i-korb"/></svg><span class="korb-zahl" data-leer="1">0</span></button>
     <button class="symbol kopf__menue" data-oeffne="#menue" aria-label="Menu"><svg><use href="#i-menue"/></svg></button>
@@ -31,8 +31,7 @@ def schubladen(b):
   <ul class="menue-liste">
     <li><a href="{b}/products/curlmoon-nest/">Shop the Curlmoon Nest {pfeil}</a></li>
     <li><a href="{b}/products/curlmoon-nest/#groessen">Size guide {pfeil}</a></li>
-    <li><a href="{b}/products/curlmoon-nest/#bewertungen">Reviews {pfeil}</a></li>
-    <li><a href="mailto:support@curlmoon.com?subject=Where%20is%20my%20order%3F">Track your order {pfeil}</a></li>
+    <li><a href="mailto:curlmoon@lichters.email?subject=Where%20is%20my%20order%3F">Track your order {pfeil}</a></li>
     <li><a href="{b}/products/curlmoon-nest/#fragen">FAQ {pfeil}</a></li>
     <li><a href="{b}/pages/about-us/">About us {pfeil}</a></li>
     <li><a href="{b}/pages/contact/">Contact us {pfeil}</a></li>
@@ -63,8 +62,8 @@ def fuss(b):
   <div class="fuss__raster">
     <div><img class="fuss__logo" src="{b}/img/logo_creme.webp" alt="Curlmoon" width="90" height="20">
       <p style="margin:0;max-width:340px">Soft, round beds for dogs who sleep curled up. Real humans answer every email within 1 business day.</p>
-      <p style="margin:12px 0 0"><a href="mailto:support@curlmoon.com">support@curlmoon.com</a> · <a href="{b}/pages/contact/">Contact form</a></p></div>
-    <div><h5>Help</h5><ul><li><a href="mailto:support@curlmoon.com?subject=Where%20is%20my%20order%3F">Track your order</a></li><li><a href="{b}/products/curlmoon-nest/#fragen">FAQ</a></li><li><a href="{b}/pages/shipping-policy/">Shipping policy</a></li><li><a href="{b}/pages/refund-policy/">30-day money-back guarantee</a></li></ul></div>
+      <p style="margin:12px 0 0"><a href="mailto:curlmoon@lichters.email">curlmoon@lichters.email</a> · <a href="{b}/pages/contact/">Contact form</a></p></div>
+    <div><h5>Help</h5><ul><li><a href="mailto:curlmoon@lichters.email?subject=Where%20is%20my%20order%3F">Track your order</a></li><li><a href="{b}/products/curlmoon-nest/#fragen">FAQ</a></li><li><a href="{b}/pages/shipping-policy/">Shipping policy</a></li><li><a href="{b}/pages/refund-policy/">30-day money-back guarantee</a></li></ul></div>
     <div><h5>Company</h5><ul><li><a href="{b}/pages/about-us/">About us</a></li><li><a href="{b}/pages/contact/">Contact</a></li></ul></div>
   </div>
   {zahlarten()}

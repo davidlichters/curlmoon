@@ -14,10 +14,11 @@ SEITEN = {
     'pages/shipping-policy/index.html': '../..',
     'pages/refund-policy/index.html': '../..',
 }
+# 02.11.2026: keine Bewertungen und keine Sterne, solange es keine echten Kunden gibt (Playbook D22, Musk-Urteil 11:09).
 # Abschnitte je Seite, in dieser Reihenfolge aus bau/teil_<name>.html (Begründung je Abschnitt: ANALYSE.md)
 ABSCHNITTE = {
-    'index.html': ['vergleich', 'band', 'bewertungen_kurz', 'garantie', 'fragen', 'schluss_home'],
-    'products/curlmoon-nest/index.html': ['bew_pdp', 'vergleich', 'band', 'garantie', 'groessen', 'fragen', 'schluss'],
+    'index.html': ['vergleich', 'band', 'garantie', 'fragen', 'schluss_home'],
+    'products/curlmoon-nest/index.html': ['vergleich', 'band', 'garantie', 'groessen', 'fragen', 'schluss'],
 }
 
 for ziel, b in SEITEN.items():
